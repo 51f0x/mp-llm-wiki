@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
+    "packages": [
+      "python@3.12",
+      "ripgrep@latest",
+      "pdm@latest",
+      "gh@latest"
+    ],
+  "shell": {
+      "init_hook": [
+        "echo '✓ devbox shell ready — run: devbox run start'"
+      ],
+      "scripts": {        
+      }
+    }
+  }
