@@ -1,3 +1,7 @@
+audience: cross-functional
+last_updated: 2026-04-26
+related_docs: [README.md, ARCHITECTURE.md, OPERATIONS.md]
+
 # LLM Wiki Documentation Index
 
 ## Purpose

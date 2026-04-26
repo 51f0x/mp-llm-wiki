@@ -17,6 +17,6 @@ Add formal schema snippets for metadata and artifact contracts after stabilizati
 Terms should align with code symbols in `src/exec_operating_system/` and policies in `../../schema/policies.md`.
 
 ## Related Docs
-- `../README.md`
-- `../../schema/policies.md`
-- `../../ARCHITECTURE.md`
+- [Docs Index](../README.md)
+- [Policies](../../schema/policies.md)
+- [Architecture](../../ARCHITECTURE.md)

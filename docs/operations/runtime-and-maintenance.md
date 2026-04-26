@@ -26,6 +26,6 @@ Add rotation guidance for run artifacts and archived audits.
 Cross-check against CLI behavior and workflow tests.
 
 ## Related Docs
-- `../../OPERATIONS.md`
-- `../README.md`
-- `../reference/glossary-and-contracts.md`
+- [Operations](../../OPERATIONS.md)
+- [Docs Index](../README.md)
+- [Glossary and Contracts](../reference/glossary-and-contracts.md)

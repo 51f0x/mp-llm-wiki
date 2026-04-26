@@ -1,9 +1,11 @@
+import re
 from pathlib import Path
 
-from tests.docs_inventory import DEEP_DOCS, ROOT_DOCS
+from tests.docs_inventory import DEEP_DOCS, DOCS_INDEX, ROOT_DOCS
 
 REQUIRED_META_KEYS = ("audience", "last_updated", "related_docs")
 REQUIRED_SECTION_NAMES = ("Purpose", "Current State", "Verification Notes", "Related Docs")
+MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
 TRACE_DOCS = [
     Path("README.md"),
@@ -35,6 +37,15 @@ def _collect_h2_sections(content: str) -> set[str]:
     return sections
 
 
+def _section_content(content: str, section_name: str) -> str:
+    match = re.search(
+        rf"^##\s+{re.escape(section_name)}\s*$\n(?P<body>.*?)(?=^##\s+|\Z)",
+        content,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+    return match.group("body") if match else ""
+
+
 def test_deep_docs_follow_contract() -> None:
     for path in DEEP_DOCS:
         assert path.exists(), f"missing {path}"
@@ -47,6 +58,25 @@ def test_deep_docs_follow_contract() -> None:
         sections = _collect_h2_sections(content)
         missing_sections = [name for name in REQUIRED_SECTION_NAMES if name not in sections]
         assert not missing_sections, f"{path} missing H2 sections {missing_sections}"
+
+        related_docs_body = _section_content(content, "Related Docs")
+        markdown_links = MARKDOWN_LINK_RE.findall(related_docs_body)
+        assert markdown_links, f"{path} Related Docs must use markdown links"
+        assert "`" not in related_docs_body, f"{path} Related Docs must not use backticked paths"
+
+
+def test_docs_index_follows_index_contract() -> None:
+    assert DOCS_INDEX.exists(), "missing docs/README.md"
+    content = DOCS_INDEX.read_text(encoding="utf-8")
+
+    metadata = _parse_leading_metadata(content)
+    missing_metadata = [key for key in REQUIRED_META_KEYS if not metadata.get(key)]
+    assert not missing_metadata, f"{DOCS_INDEX} missing metadata keys {missing_metadata}"
+
+    sections = _collect_h2_sections(content)
+    required_index_sections = ("Purpose", "Current State", "Verification Notes", "Related Docs")
+    missing_sections = [name for name in required_index_sections if name not in sections]
+    assert not missing_sections, f"{DOCS_INDEX} missing H2 sections {missing_sections}"
 
 
 def test_traceability_and_recommendation_labels_present() -> None:

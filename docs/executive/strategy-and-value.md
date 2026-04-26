@@ -17,6 +17,6 @@ Add KPI mapping guidance for query outputs after the baseline docs are accepted.
 Source claims map to modules in `src/exec_operating_system/` and behavior tests in `tests/`.
 
 ## Related Docs
-- `../../README.md`
-- `../README.md`
-- `../reference/glossary-and-contracts.md`
+- [README](../../README.md)
+- [Docs Index](../README.md)
+- [Glossary and Contracts](../reference/glossary-and-contracts.md)

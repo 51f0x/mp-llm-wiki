@@ -21,6 +21,6 @@ Document extension points for additional lint rules and retrieval strategies.
 Validate against source modules in `src/exec_operating_system/` and tests under `tests/`.
 
 ## Related Docs
-- `../../CONTRIBUTING.md`
-- `../../ARCHITECTURE.md`
-- `../README.md`
+- [Contributing](../../CONTRIBUTING.md)
+- [Architecture](../../ARCHITECTURE.md)
+- [Docs Index](../README.md)

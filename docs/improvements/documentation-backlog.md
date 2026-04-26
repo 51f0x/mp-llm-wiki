@@ -26,6 +26,6 @@ Recommendation tracking starts as a markdown backlog with explicit lifecycle fie
 Each recommendation should include status, rationale, expected impact, and opening date.
 
 ## Related Docs
-- `../README.md`
-- `../../README.md`
-- `../../CONTRIBUTING.md`
+- [Docs Index](../README.md)
+- [README](../../README.md)
+- [Contributing](../../CONTRIBUTING.md)
