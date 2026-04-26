@@ -9,3 +9,10 @@ class IngestResult:
     domain: str
     sensitivity: str
     page_path: str
+
+
+@dataclass
+class QueryResult:
+    run_id: str
+    answer: str
+    filed_path: str
