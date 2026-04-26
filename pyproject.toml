@@ -5,6 +5,10 @@ requires-python = ">=3.12"
 dependencies = [
     "PyYAML>=6.0.2",
 ]
+
+[project.scripts]
+exec-os = "exec_operating_system.cli:main"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8.3.0",
