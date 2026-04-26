@@ -13,7 +13,7 @@ def _classify_domain(text: str) -> str:
         return "people"
     if "customer" in lowered or "market" in lowered:
         return "customers-market"
-    if "execution" in lowered or "project" in lowered:
+    if "execution" in lowered or "delivery" in lowered:
         return "execution"
     return "strategy"
 
