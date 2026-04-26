@@ -4,17 +4,17 @@
 Canonical navigation source for root and deep documentation pages.
 
 ## Root Entry Documents
-- `../README.md`
-- `../CONTRIBUTING.md`
-- `../ARCHITECTURE.md`
-- `../OPERATIONS.md`
+- [README](../README.md)
+- [Contributing](../CONTRIBUTING.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Operations](../OPERATIONS.md)
 
 ## Audience Sections
-- `executive/strategy-and-value.md`
-- `developer/codebase-and-workflows.md`
-- `operations/runtime-and-maintenance.md`
-- `reference/glossary-and-contracts.md`
-- `improvements/documentation-backlog.md`
+- [Executive: Strategy and Value](executive/strategy-and-value.md)
+- [Developer: Codebase and Workflows](developer/codebase-and-workflows.md)
+- [Operations: Runtime and Maintenance](operations/runtime-and-maintenance.md)
+- [Reference: Glossary and Contracts](reference/glossary-and-contracts.md)
+- [Improvements: Documentation Backlog](improvements/documentation-backlog.md)
 
 ## Canonical Targets
 docs/executive/strategy-and-value.md
@@ -30,6 +30,6 @@ This index is the source of truth for docs discoverability in the v1 baseline.
 Navigation integrity is validated in `tests/test_docs_navigation.py`.
 
 ## Related Docs
-- `../README.md`
-- `../ARCHITECTURE.md`
-- `../OPERATIONS.md`
+- [README](../README.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Operations](../OPERATIONS.md)

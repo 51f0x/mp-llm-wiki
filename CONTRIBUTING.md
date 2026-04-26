@@ -11,7 +11,7 @@ Define contribution workflows and quality gates for code and documentation.
 ## Quality Gates
 - Run `pytest -v` before committing.
 - Keep docs contract sections accurate when behavior changes.
-- Keep root and deep docs discoverable through `docs/README.md`.
+- Keep root and deep docs discoverable through [Documentation Index](docs/README.md).
 
 ## Validation Commands
 - `pytest -v`
@@ -25,6 +25,6 @@ Define contribution workflows and quality gates for code and documentation.
 Validate workflow and docs gates through tests under `tests/`.
 
 ## Related Docs
-- `docs/README.md`
-- `README.md`
-- `ARCHITECTURE.md`
+- [Documentation Index](docs/README.md)
+- [README](README.md)
+- [Architecture](ARCHITECTURE.md)

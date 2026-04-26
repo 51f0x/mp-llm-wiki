@@ -15,6 +15,6 @@ Provide a concise technical overview of package structure and workflow boundarie
 Cross-check this page against `src/exec_operating_system/*.py` and workflow tests under `tests/`.
 
 ## Related Docs
-- `docs/README.md`
-- `docs/developer/codebase-and-workflows.md`
-- `OPERATIONS.md`
+- [Documentation Index](docs/README.md)
+- [Codebase and Workflows](docs/developer/codebase-and-workflows.md)
+- [Operations](OPERATIONS.md)
