@@ -1,4 +1,5 @@
 import subprocess
+import sys
 from pathlib import Path
 
 
@@ -11,7 +12,7 @@ def test_ingest_command_creates_run_artifact(tmp_path: Path):
     src = raw / "leadership-update.md"
     src.write_text("strategy update", encoding="utf-8")
     result = subprocess.run(
-        ["python", "-m", "exec_operating_system.cli", "ingest", str(tmp_path), str(src)],
+        [sys.executable, "-m", "exec_operating_system.cli", "ingest", str(tmp_path), str(src)],
         capture_output=True,
         text=True,
         check=False,
