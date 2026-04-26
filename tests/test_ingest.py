@@ -46,3 +46,15 @@ def test_ingest_classifies_execution_from_delivery_keyword(tmp_path: Path):
 
     assert result.domain == "execution"
     assert result.page_path == "wiki/execution/2026-04-26-program-update.md"
+
+
+def test_sensitive_ingest_marks_sensitivity_in_run_file(tmp_path: Path):
+    (tmp_path / "raw").mkdir()
+    (tmp_path / "ops" / "runs").mkdir(parents=True)
+    (tmp_path / "ops" / "index.md").write_text("# Wiki Index\n", encoding="utf-8")
+    (tmp_path / "ops" / "log.md").write_text("# Operations Log\n", encoding="utf-8")
+    src = tmp_path / "raw" / "comp-plan.md"
+    src.write_text("confidential compensation bands", encoding="utf-8")
+    result = run_ingest(tmp_path, src)
+    run_file = tmp_path / "ops" / "runs" / f"{result.run_id}-ingest.md"
+    assert "sensitivity: sensitive" in run_file.read_text(encoding="utf-8")

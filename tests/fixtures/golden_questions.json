@@ -1,0 +1,6 @@
+[
+  {"domain": "strategy", "question": "What are this quarter's strategic priorities?"},
+  {"domain": "people", "question": "What is the current hiring constraint?"},
+  {"domain": "execution", "question": "Which program is currently off-track?"},
+  {"domain": "customers-market", "question": "What customer segment is growing fastest?"}
+]
