@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 def run_id_now() -> str:
-    return datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
+    return datetime.now(UTC).strftime("%Y%m%dT%H%M%S%fZ")
 
 
 def append_log(log_file: Path, line: str) -> None:
