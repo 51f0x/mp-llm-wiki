@@ -47,6 +47,6 @@ def parse_frontmatter(content: str) -> tuple[dict[str, Any], str]:
 
 
 def validate_frontmatter(meta: dict[str, Any], is_decision: bool) -> list[str]:
-    required = REQUIRED_DECISION if is_decision else REQUIRED_STANDARD
+    required = REQUIRED_STANDARD | (REQUIRED_DECISION if is_decision else set())
     missing = [k for k in required if k not in meta]
     return sorted(missing)
